@@ -54,4 +54,12 @@ public interface XAResourceWrapper extends XAResource
     * @return The value if defined; otherwise <code>null</code>
     */
    public String getJndiName();
+
+   /**
+    * Get the XA RM id corresponding to the resource manager that created this resource.
+    * This meta data is useful for RMs that do not guarantee unique JNDI names but
+    * can guarantee that the combination of jndi name and RM id uniquely identifes a resource.
+    * @return The value if defined; otherwise <code>null</code>
+    */
+   public String getResourceManagerId();
 }
